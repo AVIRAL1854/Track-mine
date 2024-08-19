@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Button = ({value}) => {
+const Button = ({text}) => {
   return (
     <div>
-        <button >{value}</button> 
+        <button >{text}</button> 
     </div>
   )
 }
