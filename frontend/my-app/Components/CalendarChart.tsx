@@ -6,15 +6,32 @@ import ValueGenerator from "@/Components/ValueGenerator";
 
 function CalendarChart() {
   const [chartData, setChartData] = useState([]);
+  const [width,setWidth]=useState(window.innerWidth);
+  const [gCellSize,setGCellSize]=useState(25);
 
   useEffect(() => {
     // Prepare your data here, similar to the original code
     // here we have to fetch the data from data base to set the data at the graph
 
     const dataTable = ValueGenerator();
-  
+
+    const handlerResize = () => {
+      setWidth(window.innerWidth);
+      if (width == window.innerWidth) {
+        setWidth(window.innerWidth);
+        if (width <= 847) {
+          setGCellSize(8);
+        } else {
+          setGCellSize(20);
+        }
+      }
+    };
+
+    handlerResize();
+    window.addEventListener("resize", handlerResize);
+
     setChartData(dataTable);
-  }, []);
+  }, [width]);
 
   const options = {
     title: "My Progress",
@@ -22,7 +39,7 @@ function CalendarChart() {
     // Add more options as needed
 
     calendar: {
-      cellSize: 20,
+      cellSize: gCellSize, //here 10 is normal value
       cellColor: {
         stroke: "#ffffff",
         strokeOpacity: 1.5,
@@ -49,12 +66,12 @@ function CalendarChart() {
   };
 
   return (
-    <div >
+    <div className=" flex w-screen flex-cols">
       {chartData.length > 0 && (
         <Chart
           chartType="Calendar"
           width="100%"
-          height="400px"
+          height="500px"
           data={chartData}
           options={options}
         />
