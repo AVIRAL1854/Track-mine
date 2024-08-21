@@ -5,8 +5,9 @@ import ValueGenerator from "@/Components/ValueGenerator";
 
 
 function CalendarChart() {
+  // let newWidth=window.innerWidth;
   const [chartData, setChartData] = useState([]);
-  const [width,setWidth]=useState(window.innerWidth);
+  const [width,setWidth]=useState(0);
   const [gCellSize,setGCellSize]=useState(25);
 
   useEffect(() => {
@@ -38,11 +39,15 @@ function CalendarChart() {
     window.addEventListener("resize", handlerResize);
 
     setChartData(dataTable);
+
+    return()=>{
+      window.removeEventListener('resize',handlerResize);
+    }
   }, [width]);
 
   const options = {
     title: "My Progress",
-    height: 250,
+    height: width<=400?200:width<=820?250:300,
     // Add more options as needed
 
     calendar: {
@@ -73,12 +78,12 @@ function CalendarChart() {
   };
 
   return (
-    <div className=" ">
+    <div className="flex w-full  ">
       {chartData.length > 0 && (
         <Chart
           chartType="Calendar"
           width="100%"
-          height="500px"
+          height="300px"
           data={chartData}
           options={options}
         />
