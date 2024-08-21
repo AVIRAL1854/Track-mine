@@ -16,15 +16,22 @@ function CalendarChart() {
     const dataTable = ValueGenerator();
 
     const handlerResize = () => {
-      setWidth(window.innerWidth);
-      if (width == window.innerWidth) {
+      
         setWidth(window.innerWidth);
-        if (width <= 847) {
-          setGCellSize(8);
-        } else {
+
+        if(width<=400){
+          setGCellSize(6)
+        }
+       else if (width <= 820) {
+          setGCellSize(7);
+        }   
+        else if(width <1184){
+          setGCellSize(15)
+        }
+        else  {
           setGCellSize(20);
         }
-      }
+      
     };
 
     handlerResize();
@@ -66,7 +73,7 @@ function CalendarChart() {
   };
 
   return (
-    <div className=" flex w-screen flex-cols">
+    <div className=" ">
       {chartData.length > 0 && (
         <Chart
           chartType="Calendar"

@@ -12,10 +12,10 @@ const page = () => {
       </section>
       <section className=" flex-rows w-full">
         this is the main profile here
-        <div className="   flex bg-black rounded-xl w-full drop-shadow-lg ">
+        <div className="  w-full flex bg-black rounded-xl  drop-shadow-lg ">
           <CalendarChart />{" "}
         </div>
-        <div className="w-full flex flex-cols w-screen md:w-full">
+        <div className="w-full flex flex-cols w-screen ">
           <ProgressGraph />
         </div>
       </section>
