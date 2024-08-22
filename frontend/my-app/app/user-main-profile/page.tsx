@@ -5,9 +5,11 @@ import CalendarChart from "@/Components/CalendarChart";
 import { ProgressGraph } from "@/Components/ProgressGraph";
 import StreakCard from "@/Components/StreakCard";
 import CardValueGenerator from "@/Components/Cardgenerator";
-import DataCard from "@/Components/DataCard"
+import DataCard from "@/Components/DataCard";
 
 const page = () => {
+  
+  const cardData = CardValueGenerator();
   return (
     <div className="h-full  flex-cols w-full text-black bg-violet-500 ">
       <section className="flex flex-cols w-full  ">
@@ -31,9 +33,18 @@ const page = () => {
       </section>
 
       {/* here the datacard is stored */}
-      <section className="flex grid w-full">CardValueGenerator.map(i){
-        <DataCard time={time}/>
-        }</section>
+      <section className=" grid   lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
+        {cardData?.data.map((item) => (
+          <DataCard time={item.DATE} inputText={item.inputText} />
+        ))}
+      </section>
+
+      {/* here the datacard is stored */}
+      {/* <section className="flex grid w-full">
+        {cardData?.data.map((item, index) => (
+          <DataCard key={index} time={item.DATE} inputText={item.inputText} />
+        ))}
+      </section> */}
     </div>
   );
 };

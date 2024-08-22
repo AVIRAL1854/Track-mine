@@ -3,13 +3,13 @@ const CardValueGenerator = () => {
   let month = 1;
   let year = 2024;
   let obj = {data:[
-        {
-            DATE:"",
-            inputText:""
-        }
+        // {
+        //     DATE:"",
+        //     inputText:""
+        // }
   ]};
 
-  for (let i = 0; i < 31; i++) {
+  for (let i = 0; i < 10; i++) {
     day = i;
     // month=1;
     // obj.push("i-month-year":);
@@ -19,6 +19,7 @@ const CardValueGenerator = () => {
       DATE: `${day}-${month}-${year}`,
       inputText: `this is the text for day ${i} january-2024`,
     });
+    console.log('done'+i)
 
   }
 
