@@ -108,6 +108,8 @@ const chartData = [
   { date: "2024-06-28", desktop: 149, mobile: 200 },
   { date: "2024-06-29", desktop: 103, mobile: 160 },
   { date: "2024-06-30", desktop: 446, mobile: 400 },
+  
+  
 ];
 
 const chartConfig = {
@@ -140,9 +142,9 @@ export function ProgressGraph() {
     <Card>
       <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
         <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-          <CardTitle>Bar Chart - Interactive</CardTitle>
+          <CardTitle>Your Daily Hours</CardTitle>
           <CardDescription>
-            Showing total visitors for the last 3 months
+            Showing all the number of hours you study daily
           </CardDescription>
         </div>
         <div className="flex">
