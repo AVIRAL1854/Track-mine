@@ -3,12 +3,16 @@ import Button from './Button'
 
 const SearchBar = () => {
   return (
-    <div className="w-full text-white bg-blue-200 py-2 px-2 flex border-black border-2 rounded-lg">
-      <input className="w-full outline-none text-black  px-6  " type="text" placeholder="Search here out" />
-      <div className='text-black  border-2 rounded-lg  border-black w-20 text-center mx-3'>
+    <div className="w-full text-white bg-black py-2 px-2 flex border-black border-2 rounded-lg">
+      <input
+        className="w-full outline-none text-white  px-6  border-white border-2 rounded-3xl bg-slate-900"
+        type="text"
+        placeholder="Search here out"
+      />
+      <div className="text-white  border-2 rounded-lg font-bold border-white w-20 text-center mx-3 hover:bg-white hover:text-black">
         <Button text="Search" />
       </div>
-    </div> 
+    </div>
   );
 }
 
