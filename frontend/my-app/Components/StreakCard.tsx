@@ -5,13 +5,13 @@ const StreakCard = ({ first, second, third }) => {
       <section className="h-40 font-bold   w-full justify-center  bg-gradient-to-r     rounded-3xl  text-center text-3xl">
         Latest Streak :<span className=" font-bold text-5xl"> 45 days</span>
       </section>
-      <section className="h-full w-full flex justify-center bg-green-200">
-        <table className="border-2 border-black w-full  flex-rows">
+      <section className="h-full w-full flex justify-center ">
+        <table className="   w-full  flex-rows">
           <tr className="border-2 border-black  w-full text-xl  md:text-2xl">
-            <th className="flex-rows w-1/2 border-2 border-black rounded-sm border-r-white bg-amber-400">
+            <th className="flex-rows w-1/2 border-2 border-black rounded-tl-lg border-r-white bg-amber-400">
               Postion
             </th>
-            <th className="flex-rows w-2/3 border-2 border-blue-900 rounded-sm border-l-white bg-green-400">
+            <th className="flex-rows w-2/3 border-none  rounded-tr-lg border-l-white bg-green-400">
               Days
             </th>
           </tr>

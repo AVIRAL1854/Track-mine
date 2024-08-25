@@ -142,7 +142,7 @@ export function ProgressGraph() {
     <Card className="shadow-lg shadow-cyan-500/80 bg-gradient-to-r from-black via-black to-blue-900 border-none ">
       <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row ">
         <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-          <CardTitle>Your Daily Hours</CardTitle>
+          <CardTitle className="text-white">Your Daily Hours</CardTitle>
           <CardDescription>
             Showing all the number of hours you study daily
           </CardDescription>

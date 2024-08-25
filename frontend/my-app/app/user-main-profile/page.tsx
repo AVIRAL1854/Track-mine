@@ -22,11 +22,11 @@ const page = () => {
           {/* <div className="text-white">Streak : 45 days</div> */}
         </div>
         <div className="w-full flex grid lg:flex  my-5 md:my-5 lg:my-10 shadow-lg border-none ">
-          <div className="flex w-full   drop-shadow-lg  shadow-cyan-500/50  bg-black justify-center sm:my-10  border-none ">
+          <div className="flex w-full   drop-shadow-lg  shadow-cyan-500/50  bg-black1 justify-center sm:my-10  border-none ">
             {" "}
             <ProgressGraph />
           </div>
-          <div className="flex w-full  h-96 bg-black justify-center my-10 text-center justify-center rounded-lg drop-shadow-2xl shadow-cyan-500/50 ">
+          <div className="flex w-full  h-96 bg-black1 justify-center my-10 text-center justify-center rounded-lg drop-shadow-2xl shadow-cyan-500/50 ">
             <StreakCard first={45} second={25} third={10} />
           </div>
         </div>

@@ -3,7 +3,7 @@ import Button from './Button'
 
 const SearchBar = () => {
   return (
-    <div className="w-full text-white bg-black py-2 px-2 flex border-black border-2 rounded-lg">
+    <div className="w-full text-white bg-black1 py-2 px-2 flex  rounded-lg">
       <input
         className="w-full outline-none text-white  px-6  border-white border-2 rounded-3xl bg-slate-900"
         type="text"

@@ -3,11 +3,11 @@ import SearchBar from './SearchBar'
 
 const Navbar = () => {
   return (
-    <div className="w-full  bg-black  border-red-200  px-8 my-5 flex space-x-10">
+    <div className="w-full  bg-black1  border-red-200  px-8 my-5 flex space-x-10">
       <section className="w-1/2">
-        <div className="text-xl sm:text-5xl font-bold"> Track Me</div>
+        <div className="text-4xl sm:text-5xl font-bold"> Track Me</div>
       </section>
-      <section className="md:w-1/3">
+      <section className=" w-1/5 md:w-1/3 ">
         {" "}
         <SearchBar />
       </section>

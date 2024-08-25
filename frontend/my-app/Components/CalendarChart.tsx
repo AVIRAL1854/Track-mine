@@ -47,7 +47,7 @@ function CalendarChart() {
 
   const options = {
     title: "My Progress",
-    height: width<=400?200:width<=820?250:300,
+    height: width <= 400 ? 200 : width <= 820 ? 250 : 300,
     // Add more options as needed
 
     calendar: {
@@ -59,14 +59,14 @@ function CalendarChart() {
       },
       monthLabel: {
         fontSize: 12,
-        color: "#000000",
+        color: "#ffffff",
         bold: true,
         italic: true,
       },
       dayOfWeekLabel: {
         fontName: "Times-Roman",
-        fontSize: 12,
-        color: "#000000",
+        fontSize: 10,
+        color: "#ffffff",
         bold: true,
         italic: true,
       },
