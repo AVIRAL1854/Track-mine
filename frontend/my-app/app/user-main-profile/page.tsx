@@ -17,7 +17,7 @@ const page = () => {
       </section>
       <section className=" flex-rows w-full">
         this is the main profile here
-        <div className="   w-full flex bg-whit1e rounded-xl  shadow-lg shadow-cyan-500/50     place-content-center h-40 md:h-min ">
+        <div className="   w-full flex bg-whit1e rounded-xl       place-content-center h-40 md:h-min ">
           <CalendarChart />
           {/* <div className="text-white">Streak : 45 days</div> */}
         </div>
@@ -33,7 +33,7 @@ const page = () => {
       </section>
 
       {/* here the datacard is stored */}
-      <section className=" grid   lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 ">
+      <section className=" grid justify-center lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 my-10 ">
         {cardData?.data.map((item) => (
           <DataCard time={item.DATE} inputText={item.inputText} />
         ))}
