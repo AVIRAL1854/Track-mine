@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from './Button'
+
 
 const SearchBar = () => {
   return (
@@ -10,7 +10,7 @@ const SearchBar = () => {
         placeholder="Search here out"
       />
       <div className="text-white  border-2 rounded-lg font-bold border-white w-20 text-center mx-3 hover:bg-white hover:text-black">
-        <Button text="Search" />
+        <input type="button" value="search" />
       </div>
     </div>
   );
