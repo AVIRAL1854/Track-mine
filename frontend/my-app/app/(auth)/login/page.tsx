@@ -1,8 +1,12 @@
-import React from 'react'
-import Button from '@/Components/Button';
+"use client"
+import React, { useState } from 'react'
 import Labeler from '@/Components/Labeler';
 import Navbar from '@/Components/Navbar';
+import LoginButton from '@/Components/LoginButton';
 const Login=()=>{
+  const [mail,setMail]=useState("");
+  const [password,setPassword]=useState("");
+
     return (
       <div className=" flex-cols bg-black text-white h-screen  justify-center h-screen w-full place-content-center">
         {" "}
@@ -13,12 +17,12 @@ const Login=()=>{
           Login your Account here{" "}
         </section>
         <section className="flex grid justify-center font-bold  place-content-center mt-10">
-          <Labeler placeholder={"enter the gmail"} text={"Email"} />
+          <Labeler placeholder={"enter the gmail"} text={"Email"} setter={setMail} />
           {/* <Labeler placeholder={"enter the username"} text={"Username"} /> */}
-          <Labeler placeholder={"enter the password"} text={"Password"} />
+          <Labeler placeholder={"enter the password"} text={"Password"} setter={setPassword} />
         </section>
         <section className="text-center">
-          <Button text="Login" />
+          <LoginButton text="Login" mail={mail} password={password} />
         </section>
       </div>
     );
