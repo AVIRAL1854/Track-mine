@@ -1,13 +1,14 @@
 import React from 'react';
 import axios from 'axios';
-
+// import {useNavigate} from "react-router-dom";
 const LoginButton = ({text ,mail,password}) => {
 
   const handler=async()=>{
+   
     const url = "http://localhost:3000/api/login";
     const data={
-      "mail":`this is the username +${mail}`,
-      "password":`this is the password + ${password}`
+      "mail":mail,
+      "password":password
     };
 
     const headers={
@@ -15,6 +16,11 @@ const LoginButton = ({text ,mail,password}) => {
     }
     const res=await axios.post(url,data,{headers});
     console.log(res);
+    if(res.data.status=="done"){
+      alert("you are logged in");
+      window.location.href = "/user-main-profile";
+
+    }
 
   }
   return (

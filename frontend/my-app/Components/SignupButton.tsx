@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
 import axios from "axios";
+
 const SignupButton = ({ text, mail, password, username }) => {
   const handler = async () => {
     const data = {
@@ -14,8 +15,9 @@ const SignupButton = ({ text, mail, password, username }) => {
     };
     const url = "http://localhost:3000/api/signup";
     const res = await axios.post(url, data, { headers });
-
-    console.log("this is the mail received the "+res.data.message)
+    
+    
+      console.log("this is the mail received the " + res.data.message);
   };
   return (
     <div>
