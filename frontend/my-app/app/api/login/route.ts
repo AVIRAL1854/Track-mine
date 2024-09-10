@@ -18,6 +18,7 @@ export async function POST(req:NextRequest){
     // const  username=body.username;
     const password=body.password;
     const mail=body.mail;
+    console.log(`message receieved successfully ,${mail}+${password}`);
 
 
 
