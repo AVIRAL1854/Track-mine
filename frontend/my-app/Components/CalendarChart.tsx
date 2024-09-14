@@ -2,19 +2,66 @@
 import React, { useState, useEffect } from "react";
 import Chart from "react-google-charts";
 import ValueGenerator from "@/Components/ValueGenerator";
+import axios from 'axios';
 
 
 function CalendarChart() {
   // let newWidth=window.innerWidth;
-  const [chartData, setChartData] = useState([]);
+  const [chartData, setChartData] = useState(["Date", "Won/loss"]);
   const [width,setWidth]=useState(0);
   const [gCellSize,setGCellSize]=useState(25);
+  const fetchData=async()=>{
 
-  useEffect(() => {
+    const url = "http://localhost:3000/api/user-profile/calendar";
+    const body = {
+      uid: " this is uid",
+      cookie: "cookie details",
+    };
+
+     try {
+       const res = await axios.post(url, body);
+       const dataTable = res.data.value;
+       console.log("this is api testing", dataTable);
+       console.log(typeof(dataTable))
+       setChartData(dataTable); // Update state here
+     } catch (error) {
+       console.error("Error fetching data:", error);
+      //  const blankData=[['date','value']];
+      // let val = [["Date", "Won/loss"]];
+      //  setChartData(val)
+       // Handle error appropriately
+     }
+
+
+    //  PROBLEM : THE MAIN PROBLEM IS THE DATA WE ARE
+    
+    
+  }
+  useEffect( () => {
     // Prepare your data here, similar to the original code
     // here we have to fetch the data from data base to set the data at the graph
 
-    const dataTable = ValueGenerator();
+
+    // const url = "http://localhost:3000/api/user-profile/calendar";
+    // const body={
+    //   uid:" this is uid",
+    //   cookie:"cookie details"
+    // }
+     
+    // async function Datagetter(){
+    //   const res= await axios.post(url,body);
+    //   console.log(" this is api testing "+ res.data.value );
+    // return res.data.value;
+    // }
+    
+
+    
+    
+    // const dataTable = await  Datagetter();
+    fetchData();
+    // console.log(typeof(dataTable1))
+    // const dataTable = ValueGenerator();
+    // console.log(typeof(dataTable))
 
     const handlerResize = () => {
       
@@ -38,7 +85,9 @@ function CalendarChart() {
     handlerResize();
     window.addEventListener("resize", handlerResize);
 
-    setChartData(dataTable);
+    // console.log("this is dataTable :"+typeof(dataTable) + dataTable)
+
+    // setChartData(dataTable);  
 
     return()=>{
       window.removeEventListener('resize',handlerResize);

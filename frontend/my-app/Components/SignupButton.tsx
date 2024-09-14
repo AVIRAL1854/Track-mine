@@ -9,9 +9,7 @@ const SignupButton = ({ text, mail, password, username }) => {
       password: `${password}`,
       username: `${username}`,
     };
-    const user_data={
-      username:123
-    }
+   
 
     const headers = {
       value: "this is the header value",
