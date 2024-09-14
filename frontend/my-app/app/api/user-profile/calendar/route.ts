@@ -7,7 +7,7 @@ import axios from "axios";
 
 export async function  POST(req:NextRequest){
     const body=await req.json();
-    const val=await ValueGenerator();
+    const val= ValueGenerator();
     console.log("this is hit and this is calendar api")
     return NextResponse.json({
         message:"yes this got hit",
