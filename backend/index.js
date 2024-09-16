@@ -20,8 +20,7 @@
 //     {},
 //     {
 //       status: 204,
-//       headers: {
-//         Allow: "GET, POST",
+//       
 //       },
 //     }
 //   );
